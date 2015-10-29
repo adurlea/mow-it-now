@@ -1,10 +1,10 @@
 package org.adurlea;
 
 public enum Coordinate {
-    N("W", "E", true, true),
-    E("N", "S", true, false),
-    S("E", "W", false, true),
-    W("S", "N", false, false);
+    N("W", "E", true, false),
+    E("N", "S", true, true),
+    S("E", "W", false, false),
+    W("S", "N", false, true);
 
     private final String leftCoord;
     private final String rightCoord;
