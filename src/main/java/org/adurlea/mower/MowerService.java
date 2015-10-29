@@ -1,4 +1,4 @@
-package org.adurlea;
+package org.adurlea.mower;
 
 import java.util.ArrayList;
 import java.util.List;

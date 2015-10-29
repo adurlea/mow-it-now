@@ -1,4 +1,4 @@
-package org.adurlea;
+package org.adurlea.mower;
 
 public enum Coordinate {
     N("W", "E", true, false),

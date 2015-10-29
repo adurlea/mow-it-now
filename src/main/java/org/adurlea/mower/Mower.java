@@ -1,4 +1,4 @@
-package org.adurlea;
+package org.adurlea.mower;
 
 /**
  * Created by adurlea on 28/10/15.
