@@ -39,4 +39,116 @@ public class MowerServiceTest {
         assertEquals(expectedMower1Pos, finalMower1Pos);
         assertEquals(expectedMower2Pos, finalMower2Pos);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void when_createMowerService_invalidSurfaceNull_thenException() {
+        // GIVEN
+        String surface = null;
+
+        // WHEN
+        mowerService = new MowerService(surface);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void when_createMowerService_invalidSurfaceBlanc_thenException() {
+        // GIVEN
+        String surface = "";
+
+        // WHEN
+        mowerService = new MowerService(surface);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void when_createMowerService_invalidSurfaceSpace_thenException() {
+        // GIVEN
+        String surface = "   ";
+
+        // WHEN
+        mowerService = new MowerService(surface);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void when_createMowerService_invalidPositionNull_thenException() {
+        // GIVEN
+        String surface = "5 5";
+        String mowerPos = null;
+
+        // WHEN
+        mowerService = new MowerService(surface);
+        mowerService.addMower(mowerPos);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void when_createMowerService_invalidPositionBlanc_thenException() {
+        // GIVEN
+        String surface = "5 5";
+        String mowerPos = "";
+
+        // WHEN
+        mowerService = new MowerService(surface);
+        mowerService.addMower(mowerPos);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void when_createMowerService_invalidPositionSpace_thenException() {
+        // GIVEN
+        String surface = "5 5";
+        String mowerPos = "   ";
+
+        // WHEN
+        mowerService = new MowerService(surface);
+        mowerService.addMower(mowerPos);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void when_createMowerService_invalidMoveInstructionNull_thenException() {
+        // GIVEN
+        String surface = "5 5";
+        String mowerPos = "2 2 N";
+        String mowerMove = null;
+
+        // WHEN
+        mowerService = new MowerService(surface);
+        mowerService.addMower(mowerPos);
+        mowerService.moveMower(0, mowerMove);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void when_createMowerService_invalidMoveInstructionBlanc_thenException() {
+        // GIVEN
+        String surface = "5 5";
+        String mowerPos = "2 2 N";
+        String mowerMove = "";
+
+        // WHEN
+        mowerService = new MowerService(surface);
+        mowerService.addMower(mowerPos);
+        mowerService.moveMower(0, mowerMove);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void when_createMowerService_invalidMoveInstructionSpace_thenException() {
+        // GIVEN
+        String surface = "5 5";
+        String mowerPos = "2 2 N";
+        String mowerMove = "   ";
+
+        // WHEN
+        mowerService = new MowerService(surface);
+        mowerService.addMower(mowerPos);
+        mowerService.moveMower(0, mowerMove);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void when_createMowerService_wrongMoveInstruction_thenException() {
+        // GIVEN
+        String surface = "5 5";
+        String mowerPos = "2 2 N";
+        String mowerMove = "Y";
+
+        // WHEN
+        mowerService = new MowerService(surface);
+        mowerService.addMower(mowerPos);
+        mowerService.moveMower(0, mowerMove);
+    }
 }
