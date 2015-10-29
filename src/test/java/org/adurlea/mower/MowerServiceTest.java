@@ -2,7 +2,6 @@ package org.adurlea.mower;
 
 import static org.junit.Assert.assertEquals;
 
-import org.adurlea.mower.MowerService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
